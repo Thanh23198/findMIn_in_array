@@ -1,15 +1,17 @@
+<form method="post">
+    <input type="text" name="nhap" placeholder="nhapso">
+    <input type="submit" value="check">
 <?php
-$number=array(1,2,3,-4);
+if($SERVER['REQUEST_METHOD']=$_POST){
+    $number=$_POST["nhap"];
+}
 function findMin($number){
-     $min=$number[0];
-     $index=0;
-     for($i=1;$i<count($number);$i++){
+    $min=$number[0];
+     for($i=0;$i<count($number);$i++){
          if($number[$i]<$min){
              $min=$number[$i];
-             $index=$i;
          }
      }
-     return $index;
-
+     return $min;
 }
  echo findMin($number);
